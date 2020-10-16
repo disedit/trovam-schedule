@@ -1,26 +1,19 @@
 <template>
   <section class="schedule-day" :aria-labelledby="id">
       <h3 :id="id">{{ label }}</h3>
-      <div class="stages">
-        <stage-concerts
-          v-for="stage in stages"
-          :key="stage.name"
-          :name="stage.name"
-          :address="stage.address"
-          :color="stage.color"
-          :concerts="stage.concerts" />
-      </div>
+
+      <concert-list :id="id" :concerts="concerts" />
     </section>
 </template>
 
 <script>
-import StageConcerts from './StageConcerts.vue'
+import ConcertList from './ConcertList.vue'
 
 export default {
   name: 'schedule-day',
 
   components: {
-    StageConcerts
+    ConcertList
   },
 
   props: {
@@ -32,7 +25,7 @@ export default {
       type: String,
       required: true
     },
-    stages: {
+    concerts: {
       type: Array,
       required: true
     }
@@ -47,18 +40,20 @@ export default {
   margin-bottom: 8rem;
 
   h3 {
-    font-family: $font-sans;
+    font-family: $font-serif;
     color: $white;
     font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 2rem;
+    text-transform: unset;
   }
+}
 
-  .stages {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 4rem;
-    align-items: start;
+@media (max-width: 700px) {
+  .schedule-day {
+    h3 {
+      font-size: 3rem;
+    }
   }
 }
 </style>

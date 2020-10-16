@@ -1,11 +1,11 @@
 <template>
-  <div id="app" class="wrap">
+  <div id="app" class="wrap schedule">
     <schedule-day
       v-for="day in schedule"
       :key="day.id"
       :id="day.id"
       :label="day.label"
-      :stages="day.stages"
+      :concerts="day.concerts"
     />
   </div>
 </template>
@@ -20,152 +20,7 @@ export default {
 
   data () {
     return {
-      schedule: [
-        {
-          id: 'Nov11',
-          label: 'Dijous, 11 de novembre',
-          stages: [
-            {
-              name: 'Simfònica',
-              address: 'Adreça',
-              color: 'orange',
-              concerts: [
-                {
-                  time: '19:30',
-                  artist: 'Amazonians',
-                  tickets: ''
-                },
-                {
-                  time: '20:30',
-                  artist: 'Badlands',
-                  tickets: ''
-                },
-                {
-                  time: '21:30',
-                  artist: 'David Pastor Quartet',
-                  tickets: ''
-                },
-                {
-                  time: '22:30',
-                  artist: 'Laura Esparza i Carlos Esteban',
-                  tickets: ''
-                }
-              ]
-            },
-            {
-              name: 'Teatre Principal',
-              address: 'Adreça',
-              color: 'blue',
-              concerts: [
-                {
-                  time: '19:30',
-                  artist: 'Amazonians',
-                  tickets: ''
-                },
-                {
-                  time: '20:30',
-                  artist: 'Badlands',
-                  tickets: ''
-                }
-              ]
-            },
-            {
-              name: 'Escenaria Túria',
-              address: 'Adreça',
-              color: 'fuchsia',
-              concerts: [
-                {
-                  time: '19:30',
-                  artist: 'Amazonians',
-                  tickets: ''
-                },
-                {
-                  time: '20:30',
-                  artist: 'Badlands',
-                  tickets: ''
-                },
-                {
-                  time: '21:30',
-                  artist: 'David Pastor Quartet',
-                  tickets: ''
-                }
-              ]
-            }
-          ]
-        },
-        {
-          id: 'Nov12',
-          label: 'Divendres, 12 de novembre',
-          stages: [
-            {
-              name: 'Simfònica',
-              address: 'Adreça',
-              color: 'red',
-              concerts: [
-                {
-                  time: '19:30',
-                  artist: 'Amazonians',
-                  tickets: ''
-                },
-                {
-                  time: '20:30',
-                  artist: 'Badlands',
-                  tickets: ''
-                },
-                {
-                  time: '21:30',
-                  artist: 'David Pastor Quartet',
-                  tickets: ''
-                },
-                {
-                  time: '22:30',
-                  artist: 'Laura Esparza i Carlos Esteban',
-                  tickets: ''
-                }
-              ]
-            },
-            {
-              name: 'Teatre Principal',
-              address: 'Adreça',
-              color: 'purple',
-              concerts: [
-                {
-                  time: '19:30',
-                  artist: 'Amazonians',
-                  tickets: ''
-                },
-                {
-                  time: '20:30',
-                  artist: 'Badlands',
-                  tickets: ''
-                }
-              ]
-            },
-            {
-              name: 'Escenaria Túria',
-              address: 'Adreça',
-              color: 'black',
-              concerts: [
-                {
-                  time: '19:30',
-                  artist: 'Amazonians',
-                  tickets: ''
-                },
-                {
-                  time: '20:30',
-                  artist: 'Badlands',
-                  tickets: ''
-                },
-                {
-                  time: '21:30',
-                  artist: 'David Pastor Quartet',
-                  tickets: ''
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      schedule: window.schedule
     }
   }
 }
@@ -173,6 +28,7 @@ export default {
 
 <style lang="scss">
 @import './sass/variables';
+@import './sass/tooltips';
 
 .site-main {
   background-color: $primary;
@@ -181,6 +37,12 @@ export default {
   background-repeat: no-repeat;
   background-position: top left, bottom right;
   color: $text-color;
+  transition: background-position .5s;
+}
+
+.schedule {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .content-wrapper {
@@ -197,9 +59,25 @@ export default {
   background: $primary !important;
 }
 
+@media (max-width: 1200px) {
+  .site-main {
+    background-position: top left -100px, bottom right -100px;
+  }
+}
+
 @media (max-width: 700px) {
   #app {
     margin-top: 100px;
+  }
+
+  .wrap {
+    width: 100%;
+  }
+
+  .site-main {
+    background-position: top -180px left -200px, bottom right;
+    padding-top: 100px;
+    padding-bottom: 400px;
   }
 }
 </style>
