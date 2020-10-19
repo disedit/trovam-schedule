@@ -1,4 +1,4 @@
-# trovam-artists-list
+# trovam-schedule
 
 ## Project setup
 ```
