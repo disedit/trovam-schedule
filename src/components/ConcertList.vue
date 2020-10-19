@@ -53,7 +53,7 @@ export default {
         },
         hotelintur: {
           label: 'Hotel Intur',
-          color: 'purple'
+          color: 'orange'
         },
         magicbox: {
           label: 'Magic Box',

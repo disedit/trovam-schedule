@@ -30,11 +30,12 @@ export default {
 @import './sass/variables';
 @import './sass/tooltips';
 
-.site-main {
+.site {
   background-color: $primary;
   background-image: url(./assets/img/chopsticks.jpg), url(./assets/img/earpods.jpg);
   background-size: 380px, 400px;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: top left, bottom right;
   color: $text-color;
   transition: background-position .5s;
@@ -56,7 +57,7 @@ export default {
 
 .sidebar-footer,
 .site-infos {
-  background: $primary !important;
+  background: transparent !important;
 }
 
 @media (max-width: 1200px) {
@@ -74,7 +75,15 @@ export default {
     width: 100%;
   }
 
+  .site {
+    background-image: none;
+  }
+
   .site-main {
+    background-color: $primary;
+    background-image: url(./assets/img/chopsticks.jpg), url(./assets/img/earpods.jpg);
+    background-size: 380px, 400px;
+    background-repeat: no-repeat;
     background-position: top -180px left -200px, bottom right;
     padding-top: 100px;
     padding-bottom: 400px;
