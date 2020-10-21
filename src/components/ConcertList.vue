@@ -16,6 +16,7 @@
         </span>
         <span v-if="concert.stage" class="concert-stage" v-tooltip="stage('venue', concert.stage)">
           {{ stage('label', concert.stage) }}
+          <span class="concert-stage-venue">- {{ stage('venue', concert.stage) }}</span>
         </span>
         <span class="concert-icon"><i class="fa fa-ticket" v-tooltip="'Entrades'" v-if="concert.tickets" /></span>
       </component>
@@ -77,6 +78,11 @@ export default {
         },
         aularis: {
           label: 'Aularis',
+          venue: 'Auditori de Castelló',
+          color: 'gray'
+        },
+        premsa: {
+          label: 'Sala de premsa',
           venue: 'Auditori de Castelló',
           color: 'gray'
         }
@@ -145,6 +151,10 @@ export default {
         padding: .5rem 1rem;
         text-align: center;
         align-self: start;
+
+        &-venue {
+          display: none;
+        }
       }
 
       .concert-icon {
@@ -206,6 +216,10 @@ export default {
           "time artist icon"
           "stage stage stage";
         row-gap: .5rem;
+
+        &-stage-venue {
+          display: inline !important;
+        }
       }
 
       @each $name, $color in $colors {
