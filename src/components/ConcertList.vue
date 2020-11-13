@@ -85,6 +85,10 @@ export default {
           label: 'Sala de premsa',
           venue: 'Auditori de Castelló',
           color: 'gray'
+        },
+        raval: {
+          label: 'Teatre del Raval',
+          color: 'orange'
         }
       }
     }
