@@ -89,6 +89,14 @@ export default {
         raval: {
           label: 'Teatre del Raval',
           color: 'orange'
+        },
+        stream: {
+          label: 'Streaming',
+          color: 'orange'
+        },
+        ajornat: {
+          label: 'Ajornat',
+          color: 'black'
         }
       }
     }
