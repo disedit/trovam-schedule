@@ -1,8 +1,8 @@
 <template>
-  <section class="schedule-day" :aria-labelledby="id">
-      <h3 :id="id">{{ label }}</h3>
+  <section class="schedule-day" :aria-labelledby="day.id">
+      <h3 :id="day.id"><span>{{ day.label }}</span> {{ day.weekday }}</h3>
 
-      <concert-list :id="id" :concerts="concerts" />
+      <concert-list :id="day.id" :concerts="day.concerts" />
     </section>
 </template>
 
@@ -17,16 +17,8 @@ export default {
   },
 
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-    label: {
-      type: String,
-      required: true
-    },
-    concerts: {
-      type: Array,
+    day: {
+      type: Object,
       required: true
     }
   }
@@ -46,6 +38,22 @@ export default {
     line-height: 1.1;
     margin-bottom: 2rem;
     text-transform: unset;
+    display: flex;
+    align-items: center;
+
+    span {
+      color: $secondary;
+      border: 3px currentColor solid;
+      font-family: $font-sans;
+      font-size: .55em;
+      margin-right: 1rem;
+      padding: .5em .55em .6em .55em;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      white-space: nowrap;
+    }
   }
 }
 

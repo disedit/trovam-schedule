@@ -1,12 +1,11 @@
 <template>
   <div id="app" class="wrap schedule">
-    <schedule-day
-      v-for="day in schedule"
-      :key="day.id"
-      :id="day.id"
-      :label="day.label"
-      :concerts="day.concerts"
-    />
+    <div v-for="(day, i) in schedule" :key="day.id" class="day">
+      <schedule-day :day="day" />
+      <img v-if="i === 1" src="./assets/img/tuba.png" alt="" class="instrument instrument-1" />
+      <img v-if="i === 2" src="./assets/img/drum.png" alt="" class="instrument instrument-2" />
+      <img v-if="i === 3" src="./assets/img/banjo.png" alt="" class="instrument instrument-3" />
+    </div>
   </div>
 </template>
 
@@ -32,11 +31,6 @@ export default {
 
 .site {
   background-color: $primary;
-  background-image: url(./assets/img/chopsticks.jpg), url(./assets/img/earpods.jpg);
-  background-size: 380px, 400px;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top left, bottom right;
   color: $text-color;
   transition: background-position .5s;
 }
@@ -53,6 +47,32 @@ export default {
 
 .content-inner {
   background-color: transparent;
+}
+
+.day {
+  position: relative;
+}
+
+.instrument {
+  position: absolute;
+  pointer-events: none;
+  width: 300px;
+  z-index: 1;
+
+  &-1 {
+    bottom: -50px;
+    transform: translateX(-95%);
+  }
+
+  &-2 {
+    bottom: 30%;
+    transform: translate(590px, 50%);
+  }
+
+  &-3 {
+    bottom: 190px;
+    transform: translateX(-97%);
+  }
 }
 
 .sidebar-footer,
@@ -81,12 +101,28 @@ export default {
 
   .site-main {
     background-color: $primary;
-    background-image: url(./assets/img/chopsticks.jpg), url(./assets/img/earpods.jpg);
-    background-size: 380px, 400px;
-    background-repeat: no-repeat;
-    background-position: top -180px left -200px, bottom right;
-    padding-top: 100px;
-    padding-bottom: 400px;
+  }
+
+  .instrument {
+    position: static;
+    display: block;
+    margin: 0 auto;
+    width: 230px;
+    transform-origin: top top;
+    margin-bottom: -10%;
+
+    &-1 {
+      width: 200px;
+      transform: translate(-5%, -25%);
+    }
+
+    &-2 {
+      transform: translate(-8%, -35%);
+    }
+
+    &-3 {
+      transform: translate(0, -30%);
+    }
   }
 }
 </style>

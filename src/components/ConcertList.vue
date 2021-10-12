@@ -16,7 +16,7 @@
         </span>
         <span v-if="concert.stage" class="concert-stage" v-tooltip="stage('venue', concert.stage)">
           {{ stage('label', concert.stage) }}
-          <span class="concert-stage-venue">- {{ stage('venue', concert.stage) }}</span>
+          <span class="concert-stage-venue" v-if="stage('venue', concert.stage)">- {{ stage('venue', concert.stage) }}</span>
         </span>
         <span class="concert-icon"><i class="fa fa-ticket" v-tooltip="'Entrades'" v-if="concert.tickets" /></span>
       </component>
@@ -45,7 +45,7 @@ export default {
         simfonica: {
           label: 'Sala Simfònica',
           venue: 'Auditori de Castelló',
-          color: 'orange'
+          color: 'purple'
         },
         turia: {
           label: 'Escenari Túria',
@@ -59,12 +59,12 @@ export default {
         magicbox: {
           label: 'Magic Box',
           venue: 'Auditori de Castelló',
-          color: 'fuchsia'
+          color: 'red'
         },
         cambra: {
           label: 'Sala de Cambra',
           venue: 'Auditori de Castelló',
-          color: 'red'
+          color: 'green'
         },
         apunt: {
           label: 'Escenari À Punt',
@@ -97,6 +97,14 @@ export default {
         ajornat: {
           label: 'Ajornat',
           color: 'black'
+        },
+        terra: {
+          label: 'Pub Terra',
+          color: 'orange'
+        },
+        hotel: {
+          label: 'Hotel del Golf Playa',
+          color: 'orange'
         }
       }
     }

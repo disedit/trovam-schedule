@@ -1,18 +1,19 @@
 // Colors
-$primary: #00c559;
+$primary: #FF6CA5;
+$secondary: #ffcb48;
 $black: #000;
 $white: #fff;
 $colors: (
-  'orange': #F97516,
-  'blue': #2E3AA6,
-  'fuchsia': #B01FE2,
+  'purple': #917dec,
+  'orange': #ffa024,
+  'blue': #40abcc,
   'red': #FA353E,
-  'purple': #5B01DA,
+  'green': #3eb95f,
   'black': $black,
-  'gray': #555
+  'gray': #605f68
 );
 
 // Typography
-$font-sans: Flama, 'Arial Narrow', Arial, sans-serif;
+$font-sans: MarkPro, 'Arial Narrow', Arial, sans-serif;
 $font-serif: 'Subway-Black', Georgia, serif;
 $text-color: $white;
