@@ -2,14 +2,20 @@
   <div id="app" class="wrap schedule">
     <div v-for="(day, i) in schedule" :key="day.id" class="day">
       <schedule-day :day="day" />
-      <img v-if="i === 1" src="./assets/img/tuba.png" alt="" class="instrument instrument-1" />
-      <img v-if="i === 2" src="./assets/img/drum.png" alt="" class="instrument instrument-2" />
-      <img v-if="i === 3" src="./assets/img/banjo.png" alt="" class="instrument instrument-3" />
-    </div>
+      <div v-if="i === 1" class="instrument instrument-1">
+        <img src="./assets/img/tuba.png" alt="" data-rellax-speed="1.25" class="rellax" />
+      </div>
+      <div v-if="i === 2" class="instrument instrument-2">
+        <img src="./assets/img/drum.png" alt="" data-rellax-speed="1.75" class="rellax" />
+      </div>
+      <div v-if="i === 3" class="instrument instrument-3">
+        <img src="./assets/img/banjo.png" alt="" data-rellax-speed="2" class="rellax" />
+      </div>    </div>
   </div>
 </template>
 
 <script>
+import Rellax from 'rellax'
 import ScheduleDay from './components/ScheduleDay.vue'
 
 export default {
@@ -21,6 +27,10 @@ export default {
     return {
       schedule: window.schedule
     }
+  },
+
+  mounted () {
+    const rellax = new Rellax('.rellax')
   }
 }
 </script>
@@ -70,7 +80,7 @@ export default {
   }
 
   &-3 {
-    bottom: 190px;
+    bottom: -15%;
     transform: translateX(-97%);
   }
 }
