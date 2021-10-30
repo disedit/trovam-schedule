@@ -98,6 +98,10 @@ export default {
           label: 'Ajornat',
           color: 'black'
         },
+        cancelled: {
+          label: 'Cancel·lat',
+          color: 'black'
+        },
         terra: {
           label: 'Pub Terra',
           color: 'orange'
@@ -223,6 +227,12 @@ export default {
           background: mix($color, $white, 20%) !important;
         }
       }
+    }
+
+    .concert-color--cancelled {
+      text-decoration: line-through;
+      text-decoration-color: #FA353E;
+      text-decoration-thickness: 2px;
     }
   }
 }
