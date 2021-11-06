@@ -4,7 +4,7 @@
       <component
         :is="concert.tickets ? 'a' : 'div'"
         :href="concert.tickets"
-        :class="`concert concert-color--${stage('color', concert.stage)}`"
+        :class="`concert stage-${concert.stage} concert-color--${stage('color', concert.stage)}`"
         target="_blank"
         rel="noopener noreferer">
         <span class="concert-time">{{ concert.time }}</span>
@@ -229,7 +229,7 @@ export default {
       }
     }
 
-    .concert-color--cancelled {
+    .stage-cancelled {
       text-decoration: line-through;
       text-decoration-color: #FA353E;
       text-decoration-thickness: 2px;
