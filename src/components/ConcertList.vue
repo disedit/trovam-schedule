@@ -67,8 +67,8 @@ export default {
           color: 'green'
         },
         apunt: {
-          label: 'Escenari À Punt',
-          venue: 'Teatre Principal de Castelló',
+          label: 'Teatre Principal',
+          venue: 'Castelló',
           color: 'black'
         },
         hort: {
@@ -108,6 +108,25 @@ export default {
         },
         hotel: {
           label: 'Hotel del Golf Playa',
+          color: 'orange'
+        },
+        paranimf: {
+          label: 'Paranimf UJI',
+          color: 'orange'
+        },
+        arts: {
+          label: 'Passadís de les Arts',
+          venue: 'Parc Ribalta',
+          color: 'orange'
+        },
+        pati: {
+          label: 'Pati',
+          venue: 'Auditori de Castelló',
+          color: 'orange'
+        },
+        templet: {
+          label: 'Templet',
+          venue: 'Parc Ribalta',
           color: 'orange'
         }
       }
