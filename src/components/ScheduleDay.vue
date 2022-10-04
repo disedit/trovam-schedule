@@ -1,6 +1,6 @@
 <template>
   <section class="schedule-day" :aria-labelledby="day.id">
-      <h3 :id="day.id"><span>{{ day.label }}</span> {{ day.weekday }}</h3>
+      <h3 :id="day.id"><span>{{ day.label }}</span> <em>{{ day.weekday }}</em></h3>
 
       <concert-list :id="day.id" :concerts="day.concerts" />
     </section>
@@ -33,7 +33,7 @@ export default {
 
   h3 {
     font-family: $font-serif;
-    color: $white;
+    color: $magenta;
     font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 2rem;
@@ -42,7 +42,7 @@ export default {
     align-items: center;
 
     span {
-      color: $secondary;
+      color: $yellow;
       border: 3px currentColor solid;
       font-family: $font-sans;
       font-size: .55em;
@@ -53,6 +53,14 @@ export default {
       align-items: center;
       line-height: 1;
       white-space: nowrap;
+      animation: neon 1s infinite;
+      --neon-color: #{$yellow};
+    }
+
+    em {
+      font-style: normal;
+      animation: neon 1s infinite;
+      --neon-color: #{$magenta};
     }
   }
 }
@@ -62,6 +70,32 @@ export default {
     h3 {
       font-size: 3rem;
     }
+  }
+}
+
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 0 var(--text-color);
+  }
+
+  24% {
+    text-shadow: 0 0 0 var(--text-color);
+  }
+
+  25% {
+    text-shadow: 0 0 10px var(--text-color);
+  }
+
+  75% {
+    text-shadow: 0 0 10px var(--text-color);
+  }
+
+  76% {
+    text-shadow: 0 0 0 var(--text-color);
+  }
+
+  100% {
+    text-shadow: 0 0 0 var(--text-color);
   }
 }
 </style>

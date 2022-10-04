@@ -5,15 +5,18 @@ $magenta: #ff3598;
 $blue: #3b8bff;
 $purple: #b13dfe;
 $white: #fff;
+$green: #2cb269;
 
 $primary: $black;
 $secondary: $yellow;
 $terciary: $blue;
 
 $colors: (
-  'purple': #917dec,
+  'purple': $purple,
   'orange': #ffa024,
-  'blue': #40abcc,
+  'yellow': $yellow,
+  'blue': $blue,
+  'magenta': $magenta,
   'red': #FA353E,
   'green': #3eb95f,
   'black': $black,
@@ -22,5 +25,5 @@ $colors: (
 
 // Typography
 $font-sans: MarkPro, 'Arial Narrow', Arial, sans-serif;
-$font-serif: 'Varela Round', Georgia, serif;
+$font-serif: giuliobold, Georgia, serif;
 $text-color: $white;

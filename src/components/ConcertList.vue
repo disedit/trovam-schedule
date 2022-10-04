@@ -59,17 +59,17 @@ export default {
         magicbox: {
           label: 'Magic Box',
           venue: 'Auditori de Castelló',
-          color: 'red'
+          color: 'blue'
         },
         cambra: {
           label: 'Sala de Cambra',
           venue: 'Auditori de Castelló',
-          color: 'green'
+          color: 'orange'
         },
         apunt: {
           label: 'Teatre Principal',
           venue: 'Castelló',
-          color: 'black'
+          color: 'magenta'
         },
         hort: {
           label: 'Hort dels Corders',
@@ -108,26 +108,26 @@ export default {
         },
         hotel: {
           label: 'Hotel del Golf Playa',
-          color: 'orange'
+          color: 'yellow'
         },
         paranimf: {
           label: 'Paranimf UJI',
-          color: 'orange'
+          color: 'green'
         },
         arts: {
           label: 'Passadís de les Arts',
           venue: 'Parc Ribalta',
-          color: 'orange'
+          color: 'magenta'
         },
         pati: {
           label: 'Pati',
           venue: 'Auditori de Castelló',
-          color: 'orange'
+          color: 'green'
         },
         templet: {
           label: 'Templet',
           venue: 'Parc Ribalta',
-          color: 'orange'
+          color: 'blue'
         }
       }
     }
@@ -145,11 +145,41 @@ export default {
 @import '../sass/variables';
 
 .concerts {
+  position: relative;
   list-style: none;
   padding: 0 1.25rem;
-  margin: 0;
+  margin: 3rem 0;
   background: $white;
   border-radius: 1rem;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    border: 3px $green solid;
+    border-radius: 1.75rem;
+    pointer-events: none;
+    --neon-color: #{$green};
+    animation: neon 2s infinite;
+    animation-delay: 1s;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: -2rem;
+    left: -2rem;
+    right: -2rem;
+    bottom: -2rem;
+    border: 3px $blue solid;
+    border-radius: 2.75rem;
+    pointer-events: none;
+    --neon-color: #{$blue};
+    animation: neon 2s infinite;
+  }
 
   li {
     border-bottom: 1px #e1e2e3 solid;
@@ -280,6 +310,32 @@ export default {
         }
       }
     }
+  }
+}
+
+@keyframes neon {
+  0% {
+    filter: drop-shadow(0 0 0 var(--neon-color));
+  }
+
+  24% {
+    filter: drop-shadow(0 0 0 var(--neon-color));
+  }
+
+  25% {
+    filter: drop-shadow(0 0 4px var(--neon-color)) drop-shadow(0 0 10px var(--neon-color)) drop-shadow(0 0 20px var(--neon-color));
+  }
+
+  75% {
+    filter: drop-shadow(0 0 4px var(--neon-color)) drop-shadow(0 0 10px var(--neon-color)) drop-shadow(0 0 20px var(--neon-color));
+  }
+
+  76% {
+    filter: drop-shadow(0 0 0 var(--neon-color));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 0 var(--neon-color));
   }
 }
 </style>

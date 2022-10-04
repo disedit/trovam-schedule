@@ -26,6 +26,14 @@ export default {
 @import './sass/variables';
 @import './sass/tooltips';
 
+@font-face {
+    font-family: 'giuliobold';
+    src: url('./assets/fonts/giulio-bold-webfont.woff2') format('woff2'),
+         url('./assets/fonts/giulio-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .site {
   background-color: $primary;
   color: $text-color;
