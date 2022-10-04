@@ -2,11 +2,9 @@
   <ul class="concerts" :aria-labelledby="id">
     <li v-for="concert in concerts" :key="concert.time">
       <component
-        :is="concert.tickets ? 'a' : 'div'"
-        :href="concert.tickets"
-        :class="`concert stage-${concert.stage} concert-color--${stage('color', concert.stage)}`"
-        target="_blank"
-        rel="noopener noreferer">
+        :is="concert.url ? 'a' : 'div'"
+        :href="concert.url"
+        :class="`concert stage-${concert.stage} concert-color--${stage('color', concert.stage)}`">
         <span class="concert-time">{{ concert.time }}</span>
         <span class="concert-artist">
           {{ concert.artist }}
