@@ -113,9 +113,9 @@ export default {
           color: 'green'
         },
         arts: {
-          label: 'Passadís de les Arts',
+          label: 'Escenari À Punt',
           venue: 'Parc Ribalta',
-          color: 'magenta'
+          color: 'black'
         },
         pati: {
           label: 'Pati',
@@ -123,9 +123,9 @@ export default {
           color: 'green'
         },
         templet: {
-          label: 'Templet',
+          label: 'Escenari À Punt',
           venue: 'Parc Ribalta',
-          color: 'blue'
+          color: 'black'
         }
       }
     }
