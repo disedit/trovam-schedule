@@ -32,8 +32,8 @@ export default {
   margin-bottom: 8rem;
 
   h3 {
-    font-family: $font-serif;
-    color: $magenta;
+    font-family: $font-rounded;
+    color: $yellow;
     font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 2rem;
@@ -42,13 +42,14 @@ export default {
     align-items: center;
 
     span {
-      color: $yellow;
-      border: 3px currentColor solid;
-      font-family: $font-sans;
+      color: $black;
+      border: 2px $black solid;
+      background: $magenta;
+      font-family: $font-headline;
       font-size: .55em;
-      margin-right: 1rem;
-      padding: .5em .55em .6em .55em;
-      border-radius: 50%;
+      margin-right: 1.4rem;
+      padding: .5em .55em .3em .55em;
+      border-radius: .5em;
       display: flex;
       align-items: center;
       line-height: 1;
@@ -59,43 +60,9 @@ export default {
 
     em {
       font-style: normal;
-      animation: neon 1s infinite;
-      --neon-color: #{$magenta};
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: $black;
     }
-  }
-}
-
-@media (max-width: 700px) {
-  .schedule-day {
-    h3 {
-      font-size: 3rem;
-    }
-  }
-}
-
-@keyframes neon {
-  0% {
-    text-shadow: 0 0 0 var(--text-color);
-  }
-
-  24% {
-    text-shadow: 0 0 0 var(--text-color);
-  }
-
-  25% {
-    text-shadow: 0 0 10px var(--text-color);
-  }
-
-  75% {
-    text-shadow: 0 0 10px var(--text-color);
-  }
-
-  76% {
-    text-shadow: 0 0 0 var(--text-color);
-  }
-
-  100% {
-    text-shadow: 0 0 0 var(--text-color);
   }
 }
 </style>

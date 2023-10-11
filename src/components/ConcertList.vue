@@ -102,7 +102,7 @@ export default {
         },
         terra: {
           label: 'Pub Terra',
-          color: 'orange'
+          color: 'green'
         },
         hotel: {
           label: 'Hotel del Golf Playa',
@@ -126,6 +126,16 @@ export default {
           label: 'Escenari À Punt',
           venue: 'Parc Ribalta',
           color: 'black'
+        },
+        vibramahou: {
+          label: 'Escenari VibraMahou',
+          venue: '',
+          color: 'red'
+        },
+        bohemia: {
+          label: 'Sala La Bohemia',
+          venue: '',
+          color: 'magenta'
         }
       }
     }
@@ -149,35 +159,7 @@ export default {
   margin: 3rem 0;
   background: $white;
   border-radius: 1rem;
-
-  &::before {
-    position: absolute;
-    content: '';
-    top: -1rem;
-    left: -1rem;
-    right: -1rem;
-    bottom: -1rem;
-    border: 3px $green solid;
-    border-radius: 1.75rem;
-    pointer-events: none;
-    --neon-color: #{$green};
-    animation: neon 2s infinite;
-    animation-delay: 1s;
-  }
-
-  &::after {
-    position: absolute;
-    content: '';
-    top: -2rem;
-    left: -2rem;
-    right: -2rem;
-    bottom: -2rem;
-    border: 3px $blue solid;
-    border-radius: 2.75rem;
-    pointer-events: none;
-    --neon-color: #{$blue};
-    animation: neon 2s infinite;
-  }
+  border: 2px $black solid;
 
   li {
     border-bottom: 1px #e1e2e3 solid;
@@ -266,12 +248,13 @@ export default {
 
       a.concert-color--#{$name} {
         &:hover {
-          background: mix($color, $white, 10%) !important;
-          color: $color !important;
-        }
+          background: $color !important;
+          color: $white !important;
 
-        &:active {
-          background: mix($color, $white, 20%) !important;
+          .concert-stage {
+            background: $white;
+            color: $color;
+          }
         }
       }
     }
@@ -280,6 +263,16 @@ export default {
       text-decoration: line-through;
       text-decoration-color: #FA353E;
       text-decoration-thickness: 2px;
+    }
+
+    a.concert-color--yellow {
+      &:hover {
+        color: $black !important;
+
+        .concert-stage {
+          color: $black !important;
+        }
+      }
     }
   }
 }
@@ -308,32 +301,6 @@ export default {
         }
       }
     }
-  }
-}
-
-@keyframes neon {
-  0% {
-    filter: drop-shadow(0 0 0 var(--neon-color));
-  }
-
-  24% {
-    filter: drop-shadow(0 0 0 var(--neon-color));
-  }
-
-  25% {
-    filter: drop-shadow(0 0 4px var(--neon-color)) drop-shadow(0 0 10px var(--neon-color)) drop-shadow(0 0 20px var(--neon-color));
-  }
-
-  75% {
-    filter: drop-shadow(0 0 4px var(--neon-color)) drop-shadow(0 0 10px var(--neon-color)) drop-shadow(0 0 20px var(--neon-color));
-  }
-
-  76% {
-    filter: drop-shadow(0 0 0 var(--neon-color));
-  }
-
-  100% {
-    filter: drop-shadow(0 0 0 var(--neon-color));
   }
 }
 </style>
